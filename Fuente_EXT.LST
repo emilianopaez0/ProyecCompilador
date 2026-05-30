@@ -1,0 +1,13 @@
+1  : Vacio                     :      *DIRECCIONAMIENTO EXTENDIDO  
+2  : Vacio                     :        
+3  : Vacio                     :   ORG $8000    
+4  : Vacio                     :        
+5  : 8000(B6457C)              :   LDAA $457C  *EXTENDIDO: CARGA DIR $457C EN A  
+6  : 8003(F605FB)              :   LdAB 1531  *EXTENDIDO: CARGA DIR 1531 EN B  
+7  : 8006(FC1789)              :   ldd $1789  *EXTENDIDO: CARGA DIR $1789 EN D  
+8  : 8009(FEFDE8)              :   ldX 65000  *EXTENDIDO: CARGA DIR 65000 EN X  
+9  : 800C(BB07CB)              :   Adda $7CB  *EXTENDIDO: SUMA DIR $7CB A A  
+10 : 800F(B4F081)              :   ANDA $F081  *EXTENDIDO: AND DIR $F081 CON A  
+11 : 8012(18FEABCD)            :   LDY $ABCD  *EXTENDIDO: CARGA DIR $ABCD EN Y  
+12 : Vacio                     :        
+13 : Vacio                     :   END     

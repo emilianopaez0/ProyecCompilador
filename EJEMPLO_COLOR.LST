@@ -1,0 +1,31 @@
+1  : Vacio                     :  ORG $8000   *DIR DE INICIO  [35mERROR 004: MNEMONICO INEXISTENTE. [0m
+2  : 8000([31m8E[0m[34m03FF[0m) :   LDS #$03FF  *APUNTADOR DE STAK  [35m[0m
+3  : Vacio                     :        [35m[0m
+4  : Vacio                     :      *Definición de registros y direcciones de E/S  [35m[0m
+5  : Vacio                     :  DDRA EQU $1000    [35m[0m
+6  : Vacio                     :  DDRG EQU $1008    [35m[0m
+7  : Vacio                     :  PORTG EQU $100A    [35m[0m
+8  : Vacio                     :  BAUD EQU $102B    [35m[0m
+9  : Vacio                     :  SCCR2 EQU $102D    [35m[0m
+10 : Vacio                     :  SCCR1 EQU $102C    [35m[0m
+11 : Vacio                     :  DDRD EQU $1009    [35m[0m
+12 : Vacio                     :        [35m[0m
+13 : 8003([31m86[0m[34m00[0m) :   LDAA #$00  *CONFIG TODO EL PUERTO A COMO ENTRADAS  [35m[0m
+14 : 8005([31mB7[0m[34m1000[0m) :   STAA DDRA  *EL PUERTO A  [35m[0m
+15 : Vacio                     :        [35m[0m
+16 : 8008([31m86[0m[34mFF[0m) :   LDAA #$FF  *CONFIG TODO EL PUERTO G COMO ENTRADAS  [35m[0m
+17 : 800A([31mB7[0m[34m1008[0m) :   STAA DDRG  *EL PUERTO G  [35m[0m
+18 : Vacio                     :        [35m[0m
+19 : 800D([31m86[0m[34m00[0m) :   LDAA #$00  *SE PONE PUERTO G EN CEROS  [35m[0m
+20 : 800F([31mB7[0m[34m100A[0m) :   STAA PORTG    [35m[0m
+21 : Vacio                     :        [35m[0m
+22 : 8012([31mCC[0m[34m302C[0m) :   LDD #$302C  *CONFIGURA PUERTO SERIAL  [35m[0m
+23 : 8015([31mB7[0m[34m102B[0m) :   STAA BAUD  *BAUD 9600 para cristal de 8MHz  [35m[0m
+24 : 8018([31mF7[0m[34m102D[0m) :   STAB SCCR2  *HABILITA RX Y TX PERO INTERRUPCN SOLO RX  [35m[0m
+25 : 801B([31m86[0m[34m00[0m) :   LDAA #$00    [35m[0m
+26 : 801D([31mB7[0m[34m102C[0m) :   STAA SCCR1  *8 BITS  [35m[0m
+27 : Vacio                     :        [35m[0m
+28 : 8020([31m86[0m[34mFE[0m) :   LDAA #$FE  *CONFIG PUERTO D COMO SALIDAS (EXCEPTO PD0)  [35m[0m
+29 : 8022([31mB7[0m[34m1009[0m) :   STAA DDRD  *SEA ENABLE DEL DISPLAY PD4 Y RS PD3  [35m[0m
+30 : Vacio                     :        [35m[0m
+31 : Vacio                     :   END     [35m[0m

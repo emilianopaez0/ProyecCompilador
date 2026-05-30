@@ -1,0 +1,13 @@
+1  : Vacio                     :      *DIRECCIONAMIENTO DIRECTO  [35m[0m
+2  : Vacio                     :        [35m[0m
+3  : Vacio                     :   ORG $8000    [35m[0m
+4  : Vacio                     :        [35m[0m
+5  : 8000([31m96[0m[34m45[0m) :   LDAA $45  *DIRECTO: CARGA DIR $45 EN A  [35m[0m
+6  : 8002([31mD6[0m[34m0B[0m) :   Ldab 11  *DIRECTO: CARGA DIR 11 EN B  [35m[0m
+7  : 8004([31mDC[0m[34m17[0m) :   ldd $17  *DIRECTO: CARGA DIR $17 EN D  [35m[0m
+8  : 8006([31mDE[0m[34m0F[0m) :   LDX 15  *DIRECTO: CARGA DIR 15 EN X  [35m[0m
+9  : 8008([31m9B[0m[34m7C[0m) :   AdDA $7C  *DIRECTO: SUMA DIR $7C A A  [35m[0m
+10 : 800A([31m94[0m[34mF0[0m) :   andA $F0  *DIRECTO: AND DIR $F0 CON A  [35m[0m
+11 : 800C([31m18DE[0m[34mAB[0m) :   LDY $AB  *DIRECTO: CARGA DIR $AB EN Y  [35m[0m
+12 : Vacio                     :        [35m[0m
+13 : Vacio                     :   END     [35m[0m

@@ -1,0 +1,13 @@
+1  : Vacio                     :      *DIRECCIONAMIENTO INDEXADO  [35m[0m
+2  : Vacio                     :        [35m[0m
+3  : Vacio                     :   ORG $8000    [35m[0m
+4  : Vacio                     :        [35m[0m
+5  : 8000([31mA6[0m[34m45[0m) :   LDAA $45,X  *INDEXADO X: CARGA (X+$45) EN A  [35m[0m
+6  : 8002([31m18E6[0m[34m67[0m) :   LdAB $67,Y  *INDEXADO Y: CARGA (Y+$67) EN B  [35m[0m
+7  : 8005([31mEC[0m[34m17[0m) :   LDD $17,X  *INDEXADO X: CARGA (X+$17) EN D  [35m[0m
+8  : 8007([31mCDEE[0m[34mF1[0m) :   ldx $F1,Y  *INDEXADO Y: CARGA (Y+$F1) EN X  [35m[0m
+9  : 800A([31m18AB[0m[34m07[0m) :   ADDA $07,Y  *INDEXADO Y: SUMA (Y+$07) A A  [35m[0m
+10 : 800D([31mB4[0m[34mF0[0m) :   Anda $F0,X  *INDEXADO X: AND (X+$F0) CON A  [35m[0m
+11 : 800F([31m18EE[0m[34mA0[0m) :   ldY $A0,Y  *INDEXADO Y: CARGA (Y+$A0) EN Y  [35m[0m
+12 : Vacio                     :        [35m[0m
+13 : Vacio                     :   END     [35m[0m

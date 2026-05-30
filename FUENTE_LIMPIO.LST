@@ -1,0 +1,28 @@
+1  : Vacio                     :   ORG $8000  *DIRECCION DE INICIO  
+2  : Vacio                     :        
+3  : Vacio                     :      *DEFINICION DE VARIABLES  
+4  : Vacio                     :  PORTA EQU $1000    
+5  : Vacio                     :  PORTB EQU $1002    
+6  : Vacio                     :  CONT EQU $50    
+7  : Vacio                     :        
+8  : 8000(8E03FF)              :   LDS #$03FF  *INICIALIZA STACK  
+9  : Vacio                     :        
+10 : 8003(86FF)                :   LDAA #$FF  *INMEDIATO: CARGA $FF EN A  
+11 : 8005(C600)                :   LDAB #$00  *INMEDIATO: CARGA $00 EN B  
+12 : 8007(B71000)              :   STAA PORTA  *EXTENDIDO: GUARDA A EN PORTA  
+13 : 800A(F71002)              :   STAB PORTB  *EXTENDIDO: GUARDA B EN PORTB  
+14 : Vacio                     :        
+15 : 800D(8605)                :   LDAA #$05  *INMEDIATO: CARGA CONTADOR  
+16 : 800F(9750)                :   STAA CONT  *DIRECTO: GUARDA EN $50  
+17 : Vacio                     :        
+18 : 8011(01)                  :   NOP   *INHERENTE  
+19 : 8012(08)                  :   INX   *INHERENTE  
+20 : 8013(1808)                :   INY   *INHERENTE  
+21 : 8015(09)                  :   DEX   *INHERENTE  
+22 : Vacio                     :        
+23 : Vacio                     :  CICLO      
+24 : 8016(01)                  :   NOP   *INHERENTE  
+25 : 8017(01)                  :   NOP   *INHERENTE  
+26 : 8018(4A)                  :   DECA   *INHERENTE: DECREMENTA A  
+27 : Vacio                     :        
+28 : Vacio                     :   END     

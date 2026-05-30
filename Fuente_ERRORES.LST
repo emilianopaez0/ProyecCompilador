@@ -1,0 +1,136 @@
+1  : Vacio                     :      *ARCHIVO DE PRUEBA DE ERRORES - MC68HC11  
+2  : Vacio                     :      *Basado en el SET DE INSTRUCCIONES UNAM  
+3  : Vacio                     :      *Cada bloque provoca un error especifico del compilador  
+4  : Vacio                     :        
+5  : Vacio                     :   ORG $8000    
+6  : Vacio                     :        
+7  : Vacio                     :      *---------------------------------------------  
+8  : Vacio                     :      * ERROR 009: mnemónico sin espacio al margen  
+9  : Vacio                     :      *---------------------------------------------  
+10 : Vacio                     :  nop    *9 INSTRUCCION CARECE DE ESPACIO RELATIVO AL MARGEN  ERROR 009: INSTRUCCION CARECE DE AL MENOS UN ESPACIO RELATIVO AL MARGEN. 
+11 : Vacio                     :        
+12 : Vacio                     :      *---------------------------------------------  
+13 : Vacio                     :      * ERROR 011: etiqueta con comentario en la misma línea  
+14 : Vacio                     :      *---------------------------------------------  
+15 : Vacio                     :  ETIQ1    *ETIQUETA DUPLICADA  ERROR 011: COMENTARIO EN LA MISMA LINEA DE UNA ETIQUETA. ERROR 012: ETIQUETA DUPLICADA. 
+16 : Vacio                     :        
+17 : Vacio                     :      *---------------------------------------------  
+18 : Vacio                     :      * ERROR 013: etiqueta duplicada (ETIQ1 ya existe)  
+19 : Vacio                     :      *---------------------------------------------  
+20 : Vacio                     :  INICIO      
+21 : 8000(CE06FD)              :   LDX #1789    
+22 : Vacio                     :  CICLO      
+23 : 8003(01)                  :   NOP     
+24 : 8004(01)                  :   nop     
+25 : 8005(01)                  :   NOP     
+26 : 8006(01)                  :   NoP     
+27 : 8007(01)                  :   NOP     
+28 : Vacio                     :        
+29 : Vacio                     :      *---------------------------------------------  
+30 : Vacio                     :      * ERROR 001: constante inexistente (#CONSTANTE1 no definida)  
+31 : Vacio                     :      *---------------------------------------------  
+32 : 8008(8900)                :   AdcA #CONSTANTE1  * 1 CONSTANTE INEXISTENTE  ERROR 001: CONSTANTE INEXISTENTE. 
+33 : Vacio                     :        
+34 : Vacio                     :      *---------------------------------------------  
+35 : Vacio                     :      * ERROR 004: mnemónico inexistente (NP no existe)  
+36 : Vacio                     :      *---------------------------------------------  
+37 : Vacio                     :   NP   * 4 MNEMONICO INEXISTENTE  ERROR 004: MNEMONICO INEXISTENTE. 
+38 : Vacio                     :        
+39 : Vacio                     :      *---------------------------------------------  
+40 : Vacio                     :      * ERROR 002: variable inexistente (VARIABLE1 no definida en EQU)  
+41 : Vacio                     :      *---------------------------------------------  
+42 : 800A(9900)                :   AdcA VARIABLE1  * 2 VARIABLE INEXISTENTE  ERROR 002: VARIABLE INEXISTENTE. 
+43 : Vacio                     :        
+44 : Vacio                     :      *---------------------------------------------  
+45 : Vacio                     :      * ERROR 004: mnemónico inexistente en EXT (LX no existe)  
+46 : Vacio                     :      *---------------------------------------------  
+47 : 800C(FF)                  :   LX $FF  *4 MNEMONICO INEXISTENTE  ERROR 004: MNEMONICO INEXISTENTE. 
+48 : Vacio                     :        
+49 : Vacio                     :      *---------------------------------------------  
+50 : Vacio                     :      * ERROR 005: instrucción sin operando (ANDA necesita operando)  
+51 : Vacio                     :      *---------------------------------------------  
+52 : Vacio                     :   ANDA   * 5 INSTRUCCION SIN OPERANDO  ERROR 005: INSTRUCCION CARECE DE OPERANDO(S). 
+53 : Vacio                     :        
+54 : Vacio                     :      *---------------------------------------------  
+55 : Vacio                     :      * ERROR 006: instrucción INH con operando (DEX no lleva operando)  
+56 : Vacio                     :      *---------------------------------------------  
+57 : 800D(09)                  :   dex #$45  *6 INSTRUCCION NO LLEVA OPERANDOS  ERROR 006: INSTRUCCION NO LLEVA OPERANDO(S). 
+58 : Vacio                     :        
+59 : Vacio                     :      *---------------------------------------------  
+60 : Vacio                     :      * ERROR 003: etiqueta inexistente en salto relativo  
+61 : Vacio                     :      *---------------------------------------------  
+62 : 800E(26F1)                :   BNE CICLO2  * 3 ETIQUETA INEXISTENTE  ERROR 003: ETIQUETA INEXISTENTE. ERROR 008: SALTO RELATIVO MUY LEJANO. 
+63 : Vacio                     :        
+64 : Vacio                     :      *---------------------------------------------  
+65 : Vacio                     :      * ERROR 008: salto relativo muy lejano  
+66 : Vacio                     :      *---------------------------------------------  
+67 : 800F(26F3)                :   BnE CICLO  * 8 SALTO RELATIVO MUY LEJANO (CICLO está muy lejos)  ERROR 003: ETIQUETA INEXISTENTE. 
+68 : Vacio                     :        
+69 : Vacio                     :      *---------------------------------------------  
+70 : Vacio                     :      * ERROR 007: magnitud de operando errónea (>65535 en INM)  
+71 : Vacio                     :      *---------------------------------------------  
+72 : 8010(CE012345)            :   LDX #$12345  * 7 MAGNITUD ERRONEA  ERROR 007: MAGNITUD DE OPERANDO ERRONEA. 
+73 : Vacio                     :        
+74 : Vacio                     :      *---------------------------------------------  
+75 : Vacio                     :      * ERROR 007: magnitud > 65535 en binario  
+76 : Vacio                     :      *---------------------------------------------  
+77 : 8014(CE01FFFF)            :   LDX #%11111111111111111  * 7 MAGNITUD ERRONEA  ERROR 007: MAGNITUD DE OPERANDO ERRONEA. 
+78 : Vacio                     :        
+79 : Vacio                     :      *---------------------------------------------  
+80 : Vacio                     :      * ERROR 007: magnitud > 65535 en octal  
+81 : Vacio                     :      *---------------------------------------------  
+82 : 8018(CE3FFFFFFF)          :   LDX #&7777777777  * 7 MAGNITUD ERRONEA  ERROR 007: MAGNITUD DE OPERANDO ERRONEA. 
+83 : Vacio                     :        
+84 : Vacio                     :      *---------------------------------------------  
+85 : Vacio                     :      * ERROR 007: magnitud > 65535 en decimal  
+86 : Vacio                     :      *---------------------------------------------  
+87 : 801D(CE075BCD15)          :   LDX #123456789  * 7 MAGNITUD ERRONEA  ERROR 007: MAGNITUD DE OPERANDO ERRONEA. 
+88 : Vacio                     :        
+89 : Vacio                     :      *---------------------------------------------  
+90 : Vacio                     :      * ERROR 007: carácter ASCII con más de 1 caracter  
+91 : Vacio                     :      *---------------------------------------------  
+92 : 8022(CE010000)            :   LDX #'adcdef  * 7 MAGNITUD ERRONEA (ASCII >1 caracter)  ERROR 007: MAGNITUD DE OPERANDO ERRONEA. 
+93 : Vacio                     :        
+94 : Vacio                     :      *---------------------------------------------  
+95 : Vacio                     :      * Instrucciones correctas mezcladas como referencia  
+96 : Vacio                     :      *---------------------------------------------  
+97 : 8026(8600)                :   LDAA #$00  *CORRECTO INM  
+98 : 8028(B71000)              :   STAA $1000  *CORRECTO DIR  
+99 : 802B(D6FF)                :   LDAB $FF  *CORRECTO DIR  
+100: 802D(CC302C)              :   LDD #$302C  *CORRECTO INM  
+101: 8030(7E8000)              :   JMP INICIO  *CORRECTO JMP  
+102: Vacio                     :        
+103: Vacio                     :      *---------------------------------------------  
+104: Vacio                     :      * ERROR 007: magnitud errónea en INDX  
+105: Vacio                     :      *---------------------------------------------  
+106: 8033(EE12)                :   LDX $12,X  *CORRECTO  
+107: 8035(EE0777)              :   LDX $777,X  * 7 MAGNITUD ERRONEA (>255 en indexado)  ERROR 007: MAGNITUD DE OPERANDO ERRONEA. 
+108: Vacio                     :        
+109: Vacio                     :      *---------------------------------------------  
+110: Vacio                     :      * ERROR 007: magnitud errónea en INDY  
+111: Vacio                     :      *---------------------------------------------  
+112: 8038(CDEE012345)          :   LDX $12345,y  * 7 MAGNITUD ERRONEA (>255 en indexado)  ERROR 007: MAGNITUD DE OPERANDO ERRONEA. 
+113: 803D(CDEE01FFFF)          :   LDX #%11111111111111111,Y  * 7 MAGNITUD ERRONEA  ERROR 007: MAGNITUD DE OPERANDO ERRONEA. 
+114: Vacio                     :        
+115: Vacio                     :      *---------------------------------------------  
+116: Vacio                     :      * ERROR 007: magnitud > 65535 en INDX decimal  
+117: Vacio                     :      *---------------------------------------------  
+118: 8042(CDEE075BCD15)        :   LDX 123456789,Y  * 7 MAGNITUD ERRONEA  ERROR 007: MAGNITUD DE OPERANDO ERRONEA. 
+119: Vacio                     :        
+120: Vacio                     :      *---------------------------------------------  
+121: Vacio                     :      * ERROR 007: ASCII de mas de 1 caracter en INDY  
+122: Vacio                     :      *---------------------------------------------  
+123: 8048(CDEE010000)          :   LDX 'adcdef,Y  * 7 MAGNITUD ERRONEA  ERROR 007: MAGNITUD DE OPERANDO ERRONEA. 
+124: Vacio                     :        
+125: Vacio                     :      *---------------------------------------------  
+126: Vacio                     :      * Más instrucciones sin error como referencia  
+127: Vacio                     :      *---------------------------------------------  
+128: Vacio                     :  ETIQ1    *ERROR 012: ETIQUETA DUPLICADA  ERROR 011: COMENTARIO EN LA MISMA LINEA DE UNA ETIQUETA. ERROR 012: ETIQUETA DUPLICADA. 
+129: Vacio                     :        
+130: 804D(FEFFFE)              :   LDX $FFFE  *CORRECTO EXT (cerca del límite)  
+131: 8050(DE00)                :   ldx VARIABLE  *correcto si VARIABLE fuera EQU  ERROR 002: VARIABLE INEXISTENTE. 
+132: Vacio                     :        
+133: Vacio                     :      *---------------------------------------------  
+134: Vacio                     :      * ERROR 010: programa sin END (comentar la siguiente linea para provocarlo)  
+135: Vacio                     :      *---------------------------------------------  
+136: Vacio                     :   END     

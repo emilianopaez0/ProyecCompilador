@@ -1,0 +1,13 @@
+      *DIRECCIONAMIENTO EXTENDIDO
+
+      ORG $8000
+
+      LDAA   $457C          *EXTENDIDO: CARGA DIR $457C EN A
+      LdAB   1531           *EXTENDIDO: CARGA DIR 1531 EN B
+      ldd    $1789          *EXTENDIDO: CARGA DIR $1789 EN D
+      ldX    65000          *EXTENDIDO: CARGA DIR 65000 EN X
+      Adda   $7CB           *EXTENDIDO: SUMA DIR $7CB A A
+      ANDA   $F081          *EXTENDIDO: AND DIR $F081 CON A
+      LDY    $ABCD          *EXTENDIDO: CARGA DIR $ABCD EN Y
+
+      END

@@ -1,0 +1,14 @@
+1  : Vacio                     :      *DIRECCIONAMIENTO INMEDIATO  
+2  : Vacio                     :        
+3  : Vacio                     :   ORG $8000    
+4  : Vacio                     :        
+5  : 8000(8645)                :   LDAA #$45  *INMEDIATO: CARGA $45 EN A  
+6  : 8002(C60B)                :   LDAB #11  *INMEDIATO: CARGA 11 EN B  
+7  : 8004(866B)                :   LDaA #'k  *INMEDIATO: CARGA ASCII k EN A  
+8  : 8006(CC1789)              :   LDD #$1789  *INMEDIATO: CARGA $1789 EN D  
+9  : 8009(CE05FB)              :   ldx #1531  *INMEDIATO: CARGA 1531 EN X  
+10 : 800C(8B7C)                :   addA #$7C  *INMEDIATO: SUMA $7C A A  
+11 : 800E(84F0)                :   Anda #$F0  *INMEDIATO: AND $F0 CON A  
+12 : 8010(18CEABCD)            :   LDY #$ABCD  *INMEDIATO: CARGA $ABCD EN Y  
+13 : Vacio                     :        
+14 : Vacio                     :   END     

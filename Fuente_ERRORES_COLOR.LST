@@ -1,0 +1,136 @@
+1  : Vacio                     :      *ARCHIVO DE PRUEBA DE ERRORES - MC68HC11  [35m[0m
+2  : Vacio                     :      *Basado en el SET DE INSTRUCCIONES UNAM  [35m[0m
+3  : Vacio                     :      *Cada bloque provoca un error especifico del compilador  [35m[0m
+4  : Vacio                     :        [35m[0m
+5  : Vacio                     :   ORG $8000    [35m[0m
+6  : Vacio                     :        [35m[0m
+7  : Vacio                     :      *---------------------------------------------  [35m[0m
+8  : Vacio                     :      * ERROR 009: mnemónico sin espacio al margen  [35m[0m
+9  : Vacio                     :      *---------------------------------------------  [35m[0m
+10 : Vacio                     :  nop    *9 INSTRUCCION CARECE DE ESPACIO RELATIVO AL MARGEN  [35mERROR 009: INSTRUCCION CARECE DE AL MENOS UN ESPACIO RELATIVO AL MARGEN. [0m
+11 : Vacio                     :        [35m[0m
+12 : Vacio                     :      *---------------------------------------------  [35m[0m
+13 : Vacio                     :      * ERROR 011: etiqueta con comentario en la misma línea  [35m[0m
+14 : Vacio                     :      *---------------------------------------------  [35m[0m
+15 : Vacio                     :  ETIQ1    *ETIQUETA DUPLICADA  [35mERROR 011: COMENTARIO EN LA MISMA LINEA DE UNA ETIQUETA. ERROR 012: ETIQUETA DUPLICADA. [0m
+16 : Vacio                     :        [35m[0m
+17 : Vacio                     :      *---------------------------------------------  [35m[0m
+18 : Vacio                     :      * ERROR 013: etiqueta duplicada (ETIQ1 ya existe)  [35m[0m
+19 : Vacio                     :      *---------------------------------------------  [35m[0m
+20 : Vacio                     :  INICIO      [35m[0m
+21 : 8000([31mCE[0m[34m06FD[0m) :   LDX #1789    [35m[0m
+22 : Vacio                     :  CICLO      [35m[0m
+23 : 8003([31m01[0m[34m[0m) :   NOP     [35m[0m
+24 : 8004([31m01[0m[34m[0m) :   nop     [35m[0m
+25 : 8005([31m01[0m[34m[0m) :   NOP     [35m[0m
+26 : 8006([31m01[0m[34m[0m) :   NoP     [35m[0m
+27 : 8007([31m01[0m[34m[0m) :   NOP     [35m[0m
+28 : Vacio                     :        [35m[0m
+29 : Vacio                     :      *---------------------------------------------  [35m[0m
+30 : Vacio                     :      * ERROR 001: constante inexistente (#CONSTANTE1 no definida)  [35m[0m
+31 : Vacio                     :      *---------------------------------------------  [35m[0m
+32 : 8008([31m89[0m[34m00[0m) :   AdcA #CONSTANTE1  * 1 CONSTANTE INEXISTENTE  [35mERROR 001: CONSTANTE INEXISTENTE. [0m
+33 : Vacio                     :        [35m[0m
+34 : Vacio                     :      *---------------------------------------------  [35m[0m
+35 : Vacio                     :      * ERROR 004: mnemónico inexistente (NP no existe)  [35m[0m
+36 : Vacio                     :      *---------------------------------------------  [35m[0m
+37 : Vacio                     :   NP   * 4 MNEMONICO INEXISTENTE  [35mERROR 004: MNEMONICO INEXISTENTE. [0m
+38 : Vacio                     :        [35m[0m
+39 : Vacio                     :      *---------------------------------------------  [35m[0m
+40 : Vacio                     :      * ERROR 002: variable inexistente (VARIABLE1 no definida en EQU)  [35m[0m
+41 : Vacio                     :      *---------------------------------------------  [35m[0m
+42 : 800A([31m99[0m[34m00[0m) :   AdcA VARIABLE1  * 2 VARIABLE INEXISTENTE  [35mERROR 002: VARIABLE INEXISTENTE. [0m
+43 : Vacio                     :        [35m[0m
+44 : Vacio                     :      *---------------------------------------------  [35m[0m
+45 : Vacio                     :      * ERROR 004: mnemónico inexistente en EXT (LX no existe)  [35m[0m
+46 : Vacio                     :      *---------------------------------------------  [35m[0m
+47 : 800C([31m[0m[34mFF[0m) :   LX $FF  *4 MNEMONICO INEXISTENTE  [35mERROR 004: MNEMONICO INEXISTENTE. [0m
+48 : Vacio                     :        [35m[0m
+49 : Vacio                     :      *---------------------------------------------  [35m[0m
+50 : Vacio                     :      * ERROR 005: instrucción sin operando (ANDA necesita operando)  [35m[0m
+51 : Vacio                     :      *---------------------------------------------  [35m[0m
+52 : Vacio                     :   ANDA   * 5 INSTRUCCION SIN OPERANDO  [35mERROR 005: INSTRUCCION CARECE DE OPERANDO(S). [0m
+53 : Vacio                     :        [35m[0m
+54 : Vacio                     :      *---------------------------------------------  [35m[0m
+55 : Vacio                     :      * ERROR 006: instrucción INH con operando (DEX no lleva operando)  [35m[0m
+56 : Vacio                     :      *---------------------------------------------  [35m[0m
+57 : 800D([31m09[0m[34m[0m) :   dex #$45  *6 INSTRUCCION NO LLEVA OPERANDOS  [35mERROR 006: INSTRUCCION NO LLEVA OPERANDO(S). [0m
+58 : Vacio                     :        [35m[0m
+59 : Vacio                     :      *---------------------------------------------  [35m[0m
+60 : Vacio                     :      * ERROR 003: etiqueta inexistente en salto relativo  [35m[0m
+61 : Vacio                     :      *---------------------------------------------  [35m[0m
+62 : 800E([31m26[0m[34mF1[0m) :   BNE CICLO2  * 3 ETIQUETA INEXISTENTE  [35mERROR 003: ETIQUETA INEXISTENTE. ERROR 008: SALTO RELATIVO MUY LEJANO. [0m
+63 : Vacio                     :        [35m[0m
+64 : Vacio                     :      *---------------------------------------------  [35m[0m
+65 : Vacio                     :      * ERROR 008: salto relativo muy lejano  [35m[0m
+66 : Vacio                     :      *---------------------------------------------  [35m[0m
+67 : 800F([31m26[0m[34mF3[0m) :   BnE CICLO  * 8 SALTO RELATIVO MUY LEJANO (CICLO está muy lejos)  [35mERROR 003: ETIQUETA INEXISTENTE. [0m
+68 : Vacio                     :        [35m[0m
+69 : Vacio                     :      *---------------------------------------------  [35m[0m
+70 : Vacio                     :      * ERROR 007: magnitud de operando errónea (>65535 en INM)  [35m[0m
+71 : Vacio                     :      *---------------------------------------------  [35m[0m
+72 : 8010([31mCE[0m[34m012345[0m) :   LDX #$12345  * 7 MAGNITUD ERRONEA  [35mERROR 007: MAGNITUD DE OPERANDO ERRONEA. [0m
+73 : Vacio                     :        [35m[0m
+74 : Vacio                     :      *---------------------------------------------  [35m[0m
+75 : Vacio                     :      * ERROR 007: magnitud > 65535 en binario  [35m[0m
+76 : Vacio                     :      *---------------------------------------------  [35m[0m
+77 : 8014([31mCE[0m[34m01FFFF[0m) :   LDX #%11111111111111111  * 7 MAGNITUD ERRONEA  [35mERROR 007: MAGNITUD DE OPERANDO ERRONEA. [0m
+78 : Vacio                     :        [35m[0m
+79 : Vacio                     :      *---------------------------------------------  [35m[0m
+80 : Vacio                     :      * ERROR 007: magnitud > 65535 en octal  [35m[0m
+81 : Vacio                     :      *---------------------------------------------  [35m[0m
+82 : 8018([31mCE[0m[34m3FFFFFFF[0m) :   LDX #&7777777777  * 7 MAGNITUD ERRONEA  [35mERROR 007: MAGNITUD DE OPERANDO ERRONEA. [0m
+83 : Vacio                     :        [35m[0m
+84 : Vacio                     :      *---------------------------------------------  [35m[0m
+85 : Vacio                     :      * ERROR 007: magnitud > 65535 en decimal  [35m[0m
+86 : Vacio                     :      *---------------------------------------------  [35m[0m
+87 : 801D([31mCE[0m[34m075BCD15[0m) :   LDX #123456789  * 7 MAGNITUD ERRONEA  [35mERROR 007: MAGNITUD DE OPERANDO ERRONEA. [0m
+88 : Vacio                     :        [35m[0m
+89 : Vacio                     :      *---------------------------------------------  [35m[0m
+90 : Vacio                     :      * ERROR 007: carácter ASCII con más de 1 caracter  [35m[0m
+91 : Vacio                     :      *---------------------------------------------  [35m[0m
+92 : 8022([31mCE[0m[34m010000[0m) :   LDX #'adcdef  * 7 MAGNITUD ERRONEA (ASCII >1 caracter)  [35mERROR 007: MAGNITUD DE OPERANDO ERRONEA. [0m
+93 : Vacio                     :        [35m[0m
+94 : Vacio                     :      *---------------------------------------------  [35m[0m
+95 : Vacio                     :      * Instrucciones correctas mezcladas como referencia  [35m[0m
+96 : Vacio                     :      *---------------------------------------------  [35m[0m
+97 : 8026([31m86[0m[34m00[0m) :   LDAA #$00  *CORRECTO INM  [35m[0m
+98 : 8028([31mB7[0m[34m1000[0m) :   STAA $1000  *CORRECTO DIR  [35m[0m
+99 : 802B([31mD6[0m[34mFF[0m) :   LDAB $FF  *CORRECTO DIR  [35m[0m
+100: 802D([31mCC[0m[34m302C[0m) :   LDD #$302C  *CORRECTO INM  [35m[0m
+101: 8030([31m7E[0m[34m8000[0m) :   JMP INICIO  *CORRECTO JMP  [35m[0m
+102: Vacio                     :        [35m[0m
+103: Vacio                     :      *---------------------------------------------  [35m[0m
+104: Vacio                     :      * ERROR 007: magnitud errónea en INDX  [35m[0m
+105: Vacio                     :      *---------------------------------------------  [35m[0m
+106: 8033([31mEE[0m[34m12[0m) :   LDX $12,X  *CORRECTO  [35m[0m
+107: 8035([31mEE[0m[34m0777[0m) :   LDX $777,X  * 7 MAGNITUD ERRONEA (>255 en indexado)  [35mERROR 007: MAGNITUD DE OPERANDO ERRONEA. [0m
+108: Vacio                     :        [35m[0m
+109: Vacio                     :      *---------------------------------------------  [35m[0m
+110: Vacio                     :      * ERROR 007: magnitud errónea en INDY  [35m[0m
+111: Vacio                     :      *---------------------------------------------  [35m[0m
+112: 8038([31mCDEE[0m[34m012345[0m) :   LDX $12345,y  * 7 MAGNITUD ERRONEA (>255 en indexado)  [35mERROR 007: MAGNITUD DE OPERANDO ERRONEA. [0m
+113: 803D([31mCDEE[0m[34m01FFFF[0m) :   LDX #%11111111111111111,Y  * 7 MAGNITUD ERRONEA  [35mERROR 007: MAGNITUD DE OPERANDO ERRONEA. [0m
+114: Vacio                     :        [35m[0m
+115: Vacio                     :      *---------------------------------------------  [35m[0m
+116: Vacio                     :      * ERROR 007: magnitud > 65535 en INDX decimal  [35m[0m
+117: Vacio                     :      *---------------------------------------------  [35m[0m
+118: 8042([31mCDEE[0m[34m075BCD15[0m) :   LDX 123456789,Y  * 7 MAGNITUD ERRONEA  [35mERROR 007: MAGNITUD DE OPERANDO ERRONEA. [0m
+119: Vacio                     :        [35m[0m
+120: Vacio                     :      *---------------------------------------------  [35m[0m
+121: Vacio                     :      * ERROR 007: ASCII de mas de 1 caracter en INDY  [35m[0m
+122: Vacio                     :      *---------------------------------------------  [35m[0m
+123: 8048([31mCDEE[0m[34m010000[0m) :   LDX 'adcdef,Y  * 7 MAGNITUD ERRONEA  [35mERROR 007: MAGNITUD DE OPERANDO ERRONEA. [0m
+124: Vacio                     :        [35m[0m
+125: Vacio                     :      *---------------------------------------------  [35m[0m
+126: Vacio                     :      * Más instrucciones sin error como referencia  [35m[0m
+127: Vacio                     :      *---------------------------------------------  [35m[0m
+128: Vacio                     :  ETIQ1    *ERROR 012: ETIQUETA DUPLICADA  [35mERROR 011: COMENTARIO EN LA MISMA LINEA DE UNA ETIQUETA. ERROR 012: ETIQUETA DUPLICADA. [0m
+129: Vacio                     :        [35m[0m
+130: 804D([31mFE[0m[34mFFFE[0m) :   LDX $FFFE  *CORRECTO EXT (cerca del límite)  [35m[0m
+131: 8050([31mDE[0m[34m00[0m) :   ldx VARIABLE  *correcto si VARIABLE fuera EQU  [35mERROR 002: VARIABLE INEXISTENTE. [0m
+132: Vacio                     :        [35m[0m
+133: Vacio                     :      *---------------------------------------------  [35m[0m
+134: Vacio                     :      * ERROR 010: programa sin END (comentar la siguiente linea para provocarlo)  [35m[0m
+135: Vacio                     :      *---------------------------------------------  [35m[0m
+136: Vacio                     :   END     [35m[0m

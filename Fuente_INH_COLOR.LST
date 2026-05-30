@@ -1,0 +1,16 @@
+1  : Vacio                     :      *DIRECCIONAMIENTO INHERENTE  [35m[0m
+2  : Vacio                     :        [35m[0m
+3  : Vacio                     :   ORG $8000    [35m[0m
+4  : Vacio                     :        [35m[0m
+5  : 8000([31m01[0m[34m[0m) :   NOP   *INHERENTE  [35m[0m
+6  : 8001([31m08[0m[34m[0m) :   INX   *INHERENTE  [35m[0m
+7  : 8002([31m09[0m[34m[0m) :   Dex   *INHERENTE  [35m[0m
+8  : 8003([31m1808[0m[34m[0m) :   iny   *INHERENTE  [35m[0m
+9  : 8005([31m1809[0m[34m[0m) :   DEY   *INHERENTE  [35m[0m
+10 : 8007([31m3D[0m[34m[0m) :   mul   *INHERENTE  [35m[0m
+11 : 8008([31m8F[0m[34m[0m) :   XGDX   *INHERENTE  [35m[0m
+12 : 8009([31m188F[0m[34m[0m) :   XgdY   *INHERENTE  [35m[0m
+13 : 800B([31m40[0m[34m[0m) :   NEGA   *INHERENTE  [35m[0m
+14 : 800C([31m50[0m[34m[0m) :   NEGB   *INHERENTE  [35m[0m
+15 : Vacio                     :        [35m[0m
+16 : Vacio                     :   end     [35m[0m

@@ -1,0 +1,14 @@
+1  : Vacio                     :      *DIRECCIONAMIENTO INMEDIATO  [35m[0m
+2  : Vacio                     :        [35m[0m
+3  : Vacio                     :   ORG $8000    [35m[0m
+4  : Vacio                     :        [35m[0m
+5  : 8000([31m86[0m[34m45[0m) :   LDAA #$45  *INMEDIATO: CARGA $45 EN A  [35m[0m
+6  : 8002([31mC6[0m[34m0B[0m) :   LDAB #11  *INMEDIATO: CARGA 11 EN B  [35m[0m
+7  : 8004([31m86[0m[34m6B[0m) :   LDaA #'k  *INMEDIATO: CARGA ASCII k EN A  [35m[0m
+8  : 8006([31mCC[0m[34m1789[0m) :   LDD #$1789  *INMEDIATO: CARGA $1789 EN D  [35m[0m
+9  : 8009([31mCE[0m[34m05FB[0m) :   ldx #1531  *INMEDIATO: CARGA 1531 EN X  [35m[0m
+10 : 800C([31m8B[0m[34m7C[0m) :   addA #$7C  *INMEDIATO: SUMA $7C A A  [35m[0m
+11 : 800E([31m84[0m[34mF0[0m) :   Anda #$F0  *INMEDIATO: AND $F0 CON A  [35m[0m
+12 : 8010([31m18CE[0m[34mABCD[0m) :   LDY #$ABCD  *INMEDIATO: CARGA $ABCD EN Y  [35m[0m
+13 : Vacio                     :        [35m[0m
+14 : Vacio                     :   END     [35m[0m

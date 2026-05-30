@@ -1,0 +1,28 @@
+1  : Vacio                     :   ORG $8000  *DIRECCION DE INICIO  [35m[0m
+2  : Vacio                     :        [35m[0m
+3  : Vacio                     :      *DEFINICION DE VARIABLES  [35m[0m
+4  : Vacio                     :  PORTA EQU $1000    [35m[0m
+5  : Vacio                     :  PORTB EQU $1002    [35m[0m
+6  : Vacio                     :  CONT EQU $50    [35m[0m
+7  : Vacio                     :        [35m[0m
+8  : 8000([31m8E[0m[34m03FF[0m) :   LDS #$03FF  *INICIALIZA STACK  [35m[0m
+9  : Vacio                     :        [35m[0m
+10 : 8003([31m86[0m[34mFF[0m) :   LDAA #$FF  *INMEDIATO: CARGA $FF EN A  [35m[0m
+11 : 8005([31mC6[0m[34m00[0m) :   LDAB #$00  *INMEDIATO: CARGA $00 EN B  [35m[0m
+12 : 8007([31mB7[0m[34m1000[0m) :   STAA PORTA  *EXTENDIDO: GUARDA A EN PORTA  [35m[0m
+13 : 800A([31mF7[0m[34m1002[0m) :   STAB PORTB  *EXTENDIDO: GUARDA B EN PORTB  [35m[0m
+14 : Vacio                     :        [35m[0m
+15 : 800D([31m86[0m[34m05[0m) :   LDAA #$05  *INMEDIATO: CARGA CONTADOR  [35m[0m
+16 : 800F([31m97[0m[34m50[0m) :   STAA CONT  *DIRECTO: GUARDA EN $50  [35m[0m
+17 : Vacio                     :        [35m[0m
+18 : 8011([31m01[0m[34m[0m) :   NOP   *INHERENTE  [35m[0m
+19 : 8012([31m08[0m[34m[0m) :   INX   *INHERENTE  [35m[0m
+20 : 8013([31m1808[0m[34m[0m) :   INY   *INHERENTE  [35m[0m
+21 : 8015([31m09[0m[34m[0m) :   DEX   *INHERENTE  [35m[0m
+22 : Vacio                     :        [35m[0m
+23 : Vacio                     :  CICLO      [35m[0m
+24 : 8016([31m01[0m[34m[0m) :   NOP   *INHERENTE  [35m[0m
+25 : 8017([31m01[0m[34m[0m) :   NOP   *INHERENTE  [35m[0m
+26 : 8018([31m4A[0m[34m[0m) :   DECA   *INHERENTE: DECREMENTA A  [35m[0m
+27 : Vacio                     :        [35m[0m
+28 : Vacio                     :   END     [35m[0m

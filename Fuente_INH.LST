@@ -1,0 +1,16 @@
+1  : Vacio                     :      *DIRECCIONAMIENTO INHERENTE  
+2  : Vacio                     :        
+3  : Vacio                     :   ORG $8000    
+4  : Vacio                     :        
+5  : 8000(01)                  :   NOP   *INHERENTE  
+6  : 8001(08)                  :   INX   *INHERENTE  
+7  : 8002(09)                  :   Dex   *INHERENTE  
+8  : 8003(1808)                :   iny   *INHERENTE  
+9  : 8005(1809)                :   DEY   *INHERENTE  
+10 : 8007(3D)                  :   mul   *INHERENTE  
+11 : 8008(8F)                  :   XGDX   *INHERENTE  
+12 : 8009(188F)                :   XgdY   *INHERENTE  
+13 : 800B(40)                  :   NEGA   *INHERENTE  
+14 : 800C(50)                  :   NEGB   *INHERENTE  
+15 : Vacio                     :        
+16 : Vacio                     :   end     

@@ -1,0 +1,16 @@
+1  : Vacio                     :      *DIRECCIONAMIENTO RELATIVO  
+2  : Vacio                     :        
+3  : Vacio                     :   ORG $8000    
+4  : Vacio                     :        
+5  : Vacio                     :  INICIO      
+6  : 8000(CE06FD)              :   LDX #1789  *CARGA CONTADOR EN X  
+7  : Vacio                     :  CICLO      
+8  : 8003(01)                  :   NOP   *INHERENTE  
+9  : 8004(01)                  :   nop   *INHERENTE  
+10 : 8005(01)                  :   NOP   *INHERENTE  
+11 : 8006(01)                  :   NoP   *INHERENTE  
+12 : 8007(01)                  :   NOP   *INHERENTE  
+13 : 8008(09)                  :   Dex   *DECREMENTA X  
+14 : 8009(7E8000)              :   JMP INICIO  *SALTA A INICIO  
+15 : Vacio                     :        
+16 : Vacio                     :   END     

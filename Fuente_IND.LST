@@ -1,0 +1,13 @@
+1  : Vacio                     :      *DIRECCIONAMIENTO INDEXADO  
+2  : Vacio                     :        
+3  : Vacio                     :   ORG $8000    
+4  : Vacio                     :        
+5  : 8000(A645)                :   LDAA $45,X  *INDEXADO X: CARGA (X+$45) EN A  
+6  : 8002(18E667)              :   LdAB $67,Y  *INDEXADO Y: CARGA (Y+$67) EN B  
+7  : 8005(EC17)                :   LDD $17,X  *INDEXADO X: CARGA (X+$17) EN D  
+8  : 8007(CDEEF1)              :   ldx $F1,Y  *INDEXADO Y: CARGA (Y+$F1) EN X  
+9  : 800A(18AB07)              :   ADDA $07,Y  *INDEXADO Y: SUMA (Y+$07) A A  
+10 : 800D(B4F0)                :   Anda $F0,X  *INDEXADO X: AND (X+$F0) CON A  
+11 : 800F(18EEA0)              :   ldY $A0,Y  *INDEXADO Y: CARGA (Y+$A0) EN Y  
+12 : Vacio                     :        
+13 : Vacio                     :   END     

@@ -1,0 +1,13 @@
+1  : Vacio                     :      *DIRECCIONAMIENTO EXTENDIDO  [35m[0m
+2  : Vacio                     :        [35m[0m
+3  : Vacio                     :   ORG $8000    [35m[0m
+4  : Vacio                     :        [35m[0m
+5  : 8000([31mB6[0m[34m457C[0m) :   LDAA $457C  *EXTENDIDO: CARGA DIR $457C EN A  [35m[0m
+6  : 8003([31mF6[0m[34m05FB[0m) :   LdAB 1531  *EXTENDIDO: CARGA DIR 1531 EN B  [35m[0m
+7  : 8006([31mFC[0m[34m1789[0m) :   ldd $1789  *EXTENDIDO: CARGA DIR $1789 EN D  [35m[0m
+8  : 8009([31mFE[0m[34mFDE8[0m) :   ldX 65000  *EXTENDIDO: CARGA DIR 65000 EN X  [35m[0m
+9  : 800C([31mBB[0m[34m07CB[0m) :   Adda $7CB  *EXTENDIDO: SUMA DIR $7CB A A  [35m[0m
+10 : 800F([31mB4[0m[34mF081[0m) :   ANDA $F081  *EXTENDIDO: AND DIR $F081 CON A  [35m[0m
+11 : 8012([31m18FE[0m[34mABCD[0m) :   LDY $ABCD  *EXTENDIDO: CARGA DIR $ABCD EN Y  [35m[0m
+12 : Vacio                     :        [35m[0m
+13 : Vacio                     :   END     [35m[0m

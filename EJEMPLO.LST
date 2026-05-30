@@ -1,0 +1,31 @@
+1  : Vacio                     :  ORG $8000   *DIR DE INICIO  ERROR 004: MNEMONICO INEXISTENTE. 
+2  : 8000(8E03FF)              :   LDS #$03FF  *APUNTADOR DE STAK  
+3  : Vacio                     :        
+4  : Vacio                     :      *Definición de registros y direcciones de E/S  
+5  : Vacio                     :  DDRA EQU $1000    
+6  : Vacio                     :  DDRG EQU $1008    
+7  : Vacio                     :  PORTG EQU $100A    
+8  : Vacio                     :  BAUD EQU $102B    
+9  : Vacio                     :  SCCR2 EQU $102D    
+10 : Vacio                     :  SCCR1 EQU $102C    
+11 : Vacio                     :  DDRD EQU $1009    
+12 : Vacio                     :        
+13 : 8003(8600)                :   LDAA #$00  *CONFIG TODO EL PUERTO A COMO ENTRADAS  
+14 : 8005(B71000)              :   STAA DDRA  *EL PUERTO A  
+15 : Vacio                     :        
+16 : 8008(86FF)                :   LDAA #$FF  *CONFIG TODO EL PUERTO G COMO ENTRADAS  
+17 : 800A(B71008)              :   STAA DDRG  *EL PUERTO G  
+18 : Vacio                     :        
+19 : 800D(8600)                :   LDAA #$00  *SE PONE PUERTO G EN CEROS  
+20 : 800F(B7100A)              :   STAA PORTG    
+21 : Vacio                     :        
+22 : 8012(CC302C)              :   LDD #$302C  *CONFIGURA PUERTO SERIAL  
+23 : 8015(B7102B)              :   STAA BAUD  *BAUD 9600 para cristal de 8MHz  
+24 : 8018(F7102D)              :   STAB SCCR2  *HABILITA RX Y TX PERO INTERRUPCN SOLO RX  
+25 : 801B(8600)                :   LDAA #$00    
+26 : 801D(B7102C)              :   STAA SCCR1  *8 BITS  
+27 : Vacio                     :        
+28 : 8020(86FE)                :   LDAA #$FE  *CONFIG PUERTO D COMO SALIDAS (EXCEPTO PD0)  
+29 : 8022(B71009)              :   STAA DDRD  *SEA ENABLE DEL DISPLAY PD4 Y RS PD3  
+30 : Vacio                     :        
+31 : Vacio                     :   END     
